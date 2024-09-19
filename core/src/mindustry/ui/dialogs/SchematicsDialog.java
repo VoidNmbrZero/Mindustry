@@ -110,12 +110,8 @@ public class SchematicsDialog extends BaseDialog{
 
             t.update(() -> {
                 if(Core.input.keyTap(Binding.chat) && Core.scene.getKeyboardFocus() == searchField && firstSchematic != null){
-                    if(!state.rules.schematicsAllowed){
-                        ui.showInfo("@schematic.disabled");
-                    }else{
-                        control.input.useSchematic(firstSchematic);
-                        hide();
-                    }
+                    control.input.useSchematic(firstSchematic);
+                    hide();
                 }
             });
 
@@ -178,12 +174,8 @@ public class SchematicsDialog extends BaseDialog{
                         if(state.isMenu()){
                             showInfo(s);
                         }else{
-                            if(!state.rules.schematicsAllowed){
-                                ui.showInfo("@schematic.disabled");
-                            }else{
-                                control.input.useSchematic(s);
-                                hide();
-                            }
+                            control.input.useSchematic(s);
+                            hide();
                         }
                     }).pad(4).style(Styles.flati).get();
 
